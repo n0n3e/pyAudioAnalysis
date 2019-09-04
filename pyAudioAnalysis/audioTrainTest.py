@@ -566,7 +566,7 @@ def load_model(model_name, is_regression=False):
         MEAN = cPickle.load(fo)
         STD = cPickle.load(fo)
         if not is_regression:
-            classNames = cPickle.load(fo)
+            classNames = cPickle.load(fo, encoding='latin1')
         mt_win = cPickle.load(fo)
         mt_step = cPickle.load(fo)
         st_win = cPickle.load(fo)
