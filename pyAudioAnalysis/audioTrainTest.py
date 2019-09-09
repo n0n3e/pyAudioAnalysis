@@ -566,7 +566,7 @@ def load_model(model_name, is_regression=False):
         MEAN = cPickle.load(fo)
         STD = cPickle.load(fo)
         if not is_regression:
-            classNames = cPickle.load(fo, encoding='latin1')
+            classNames = cPickle.load(fo)
         mt_win = cPickle.load(fo)
         mt_step = cPickle.load(fo)
         st_win = cPickle.load(fo)
@@ -581,7 +581,7 @@ def load_model(model_name, is_regression=False):
     STD = numpy.array(STD)
 
     with open(model_name, 'rb') as fid:
-        SVM = cPickle.load(fid, encoding='latin1')    
+        SVM = cPickle.load(fid)
 
     if is_regression:
         return(SVM, MEAN, STD, mt_win, mt_step, st_win, st_step, compute_beat)
